@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19 Predictor</title>
+    <!-- Include Bootstrap CSS from a CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">COVID-19 Predictor</h1>
+        <form action="http://localhost:5000/result" method="POST" id="covidForm">
+            <div class="row mb-3">
+                <div class="col-md-3">
+                    <label for="gender" class="form-label">Gender</label>
+                    <input type="text" class="form-control" id="gender" name="Gender" required>
+                </div>
+                <div class="col-md-3">
+                    <label for="wbc" class="form-label">WBC (White Blood Cell Count)</label>
+                    <input type="text" class="form-control" id="wbc" name="WBC" required>
+                </div>
+                <div class="col-md-3">
+                    <label for="platelets" class="form-label">Platelets</label>
+                    <input type="text" class="form-control" id="platelets" name="Platelets" required>
+                </div>
+                <div class="col-md-3">
+                    <label for="neutrophils" class="form-label">Neutrophils</label>
+                    <input type="text" class="form-control" id="neutrophils" name="Neutrophils" required>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-3">
+                    <label for="lymphocytes" class="form-label">Lymphocytes</label>
+                    <input type="text" class="form-control" id="lymphocytes" name="Lymphocytes" required>
+                </div>
+                <div class="col-md-3">
+                    <label for="monocytes" class="form-label">Monocytes</label>
+                    <input type="text" class="form-control" id="monocytes" name="Monocytes" required>
+                </div>
+                <div class="col-md-3">
+                    <label for="eosinophils" class="form-label">Eosinophils</label>
+                    <input type="text" class="form-control" id="eosinophils" name="Eosinophils" required>
+                </div>
+                <div class="col-md-3">
+                    <label for="basophils" class="form-label">Basophils</label>
+                    <input type="text" class="form-control" id="basophils" name="Basophils" required>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-3">
+                    <label for="crp" class="form-label">CRP (C-Reactive Protein)</label>
+                    <input type="text" class="form-control" id="crp" name="CRP" required>
+                </div>
+                <div class="col-md-3">
+                    <label for="ast" class="form-label">AST (Aspartate Aminotransferase)</label>
+                    <input type="text" class="form-control" id="ast" name="AST" required>
+                </div>
+                <div class="col-md-3">
+                    <label for="alt" class="form-label">ALT (Alanine Aminotransferase)</label>
+                    <input type="text" class="form-control" id="alt" name="ALT" required>
+                </div>
+                <div class="col-md-3">
+                    <label for="alt" class="form-label">ALP (Alkaline phosphatase)</label>
+                    <input type="text" class="form-control" id="alp" name="ALP" required>
+                </div>
+
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-3">
+                    <label for="ggt" class="form-label">GGT (Gamma-Glutamyltransferase)</label>
+                    <input type="text" class="form-control" id="ggt" name="GGT" required>
+                </div>
+                <div class="col-md-3">
+                    <label for="ldh" class="form-label">LDH (Lactate Dehydrogenase)</label>
+                    <input type="text" class="form-control" id="ldh" name="LDH" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <button type="submit" class="btn btn-primary">Predict COVID-19</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="container mt-5">
+        <h1 class="text-center">COVID-19 Result</h1>
+        <h1 class="text-center">{{ result }}</h1>
+    </div>
+    <!-- Include Bootstrap JavaScript from a CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/js/bootstrap.min.js"></script>
+        <script>
+        function clearForm() {
+            document.getElementById("covidForm").reset();
+        }
+    </script>
+</body>
+</html>
